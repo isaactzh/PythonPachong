@@ -30,3 +30,4 @@ def item_detail(url_item, data=None):
 for each in storage.keys():
     item_detail(storage[each])
     time.sleep(3)
+
