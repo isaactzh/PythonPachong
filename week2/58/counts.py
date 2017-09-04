@@ -4,4 +4,4 @@ from page_parsing import url_list
 
 while True:
     print(url_list.find().count()) #count用于逐个显示
-    
+    time.sleep(5)

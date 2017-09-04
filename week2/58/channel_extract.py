@@ -73,6 +73,4 @@ channel_list = '''
     http://bj.58.com/xiaoyuan/
     http://bj.58.com/ershouqiugou/
     http://bj.58.com/tiaozao/
-    http://bj.58.com/tiaozao/
-    http://bj.58.com/tiaozao/
 '''

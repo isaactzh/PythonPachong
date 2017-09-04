@@ -38,9 +38,8 @@ def get_item_info(url):
         title = soup.select('h1.info_titile')[0].text
         price = soup.select('span.price_now')[0].text
         area = soup.select('div.palce_li')[0].text.split('：')[1]
-        print(title,price,area)
-        item_info.insert_one({'title':title, 'price': price, 'area': area})
-
+        item_info.insert_one({'title': title, 'price': price,  'area': area, 'url': url})
+        print({'title': title, 'price': price,  'area': area, 'url': url})
 get_item_info(url)
 
 #判断404页面：
