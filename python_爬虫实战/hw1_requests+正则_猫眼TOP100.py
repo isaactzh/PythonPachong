@@ -1,5 +1,6 @@
 import requests
 from requests.exceptions import RequestException
+from multiprocessing import Pool
 import re
 import json
 headers = {
@@ -35,8 +36,8 @@ def write_to_file(content):
         f.write(json.dumps(content, ensure_ascii=False) + '\n')
         f.close()
 
-def main():
-    url = 'http://maoyan.com/board/4?'
+def main(offset):
+    url = 'http://maoyan.com/board/4?offset=' + str(offset)
     html = get_one_page(url)
     #print(html)
     for item in  parse_one_page(html):
@@ -44,4 +45,5 @@ def main():
         write_to_file(item)
 
 if __name__ == '__main__':
-    main()
+    pool = Pool()
+    pool.map(main, [i*10 for i in range(10)])
